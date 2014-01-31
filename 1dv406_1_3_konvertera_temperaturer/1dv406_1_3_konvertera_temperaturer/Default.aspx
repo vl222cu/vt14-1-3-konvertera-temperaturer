@@ -54,14 +54,19 @@
 				</p>
 				<p>
 					<%-- Konverteringsval--%>
-					<asp:Label ID="ConvertTitleLabel" runat="server" Text="Typ av konvertering"></asp:Label><br />
-					<asp:RadioButtonList ID="MyRadioButtonList" runat="server">
-						<asp:ListItem Value="Celsius till Fahrenheit" />
-						<asp:ListItem Value="Fahrenheit till Celsius" />
-					</asp:RadioButtonList>
+					<asp:Label ID="ConvertTitleLabel" runat="server" Text="Typ av konvertering"></asp:Label>
+				</p>
+				<p>
+					<asp:RadioButton ID="ConvCeltoFahrButton" runat="server" GroupName="ConvertAlt" Text="Celsius till Fahrenheit" Checked="True" />
+				</p>
+				<p>
+					<asp:RadioButton ID="ConvFahrtoCelButton" runat="server" GroupName="ConvertAlt" Text="Fahrenheit till Celsius"/>
+				</p>
+				<p>
 					<asp:Button ID="SendButton" runat="server" Text="Konvertera" /><br />
 				</p>
 				<p>
+					<%-- Valideringsfelmeddelanden--%>
 					<asp:ValidationSummary ID="ValidationSummary1" runat="server" 
 						Headertext="Fel inträffade! Åtgärda felen och försök igen."/>
 				</p>
