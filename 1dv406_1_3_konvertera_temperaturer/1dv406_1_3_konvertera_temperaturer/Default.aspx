@@ -5,27 +5,66 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Konvertera temperaturer</title>
+	<link href="~/Style.css" rel="stylesheet" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="Myform" runat="server">
 		<div id="maincontainer">
 			<h1>
 				<asp:Label ID="TitleLabel" runat="server" Text="Konvertera temperaturer"></asp:Label>
 			</h1>
 			<div id="content">
-				<%-- Input fields --%>
-				<asp:Label ID="StartTempLabel" runat="server" Text="Starttemperatur:"></asp:Label><br />
-				<asp:TextBox ID="StartTempBox" runat="server"></asp:TextBox><br />
-				<asp:Label ID="EndTempLabel" runat="server" Text="Sluttemperatur"></asp:Label><br />
-				<asp:TextBox ID="EndTempBox" runat="server"></asp:TextBox><br />
-				<asp:Label ID="LevelTempLabel" runat="server" Text="Temperatursteg:"></asp:Label><br />
-				<asp:TextBox ID="LevelTempBox" runat="server"></asp:TextBox><br />
-				<asp:Label ID="ConvertTitleLabel" runat="server" Text="Typ av konvertering"></asp:Label><br />
-				<asp:RadioButtonList ID="MyRadioButtonList" runat="server">
-					<asp:ListItem Value="Celsius till Fahrenheit" />
-					<asp:ListItem Value="Fahrenheit till Celsius" />
-				</asp:RadioButtonList>
-				<asp:Button ID="SendButton" runat="server" Text="Konvertera" />
+				<p>
+					<%-- Starttemperaturinput--%>
+					<asp:Label ID="StartTempLabel" runat="server" Text="Starttemperatur:"></asp:Label><br />
+					<asp:TextBox ID="StartTempBox" runat="server"></asp:TextBox><br />
+					<%-- Validering--%>
+					<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+						ErrorMessage="Starttemperatursfältet får inte vara tomt" ControlToValidate="StartTempBox"
+						Display="None"></asp:RequiredFieldValidator>
+					<asp:CompareValidator ID="CompareValidator1" runat="server"
+						ErrorMessage="Starttemperatur måste vara ett heltal" ControlToValidate="StartTempBox"
+						Type="Integer" Operator="DataTypeCheck" Display="None"></asp:CompareValidator>
+				</p>
+				<p>
+					<%-- Sluttemperaturinput--%>
+					<asp:Label ID="EndTempLabel" runat="server" Text="Sluttemperatur:"></asp:Label><br />
+					<asp:TextBox ID="EndTempBox" runat="server"></asp:TextBox><br />
+					<%-- Validering--%>
+					<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server"
+						ErrorMessage="Sluttemperatursfältet får inte vara tomt" ControlToValidate="EndTempBox"
+						Display="None"></asp:RequiredFieldValidator>
+					<asp:CompareValidator ID="CompareValidator2" runat="server"
+						ErrorMessage="Sluttemperatur måste vara ett heltal högre än starttemperaturen" 
+						ControlToValidate="EndTempBox" Type="Integer" Operator="GreaterThan" 
+						ControlToCompare="StartTempBox" Display="None">
+					</asp:CompareValidator>
+				</p>
+				<p>
+					<%-- Stegtemperaturinput--%>
+					<asp:Label ID="LevelTempLabel" runat="server" Text="Temperatursteg:"></asp:Label><br />
+					<asp:TextBox ID="LevelTempBox" runat="server"></asp:TextBox><br />
+					<%-- Validering--%>
+					<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
+						ErrorMessage="Temperaturstegsfältet får inte vara tomt" ControlToValidate="LevelTempBox"
+						Display="None"></asp:RequiredFieldValidator>
+					<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="LevelTempBox"
+						Type="Integer" ErrorMessage="Temperatursteget måste ligga mellan 1 och 100"
+						MaximumValue="100" MinimumValue="1"  Display="None"></asp:RangeValidator>
+				</p>
+				<p>
+					<%-- Konverteringsval--%>
+					<asp:Label ID="ConvertTitleLabel" runat="server" Text="Typ av konvertering"></asp:Label><br />
+					<asp:RadioButtonList ID="MyRadioButtonList" runat="server">
+						<asp:ListItem Value="Celsius till Fahrenheit" />
+						<asp:ListItem Value="Fahrenheit till Celsius" />
+					</asp:RadioButtonList>
+					<asp:Button ID="SendButton" runat="server" Text="Konvertera" /><br />
+				</p>
+				<p>
+					<asp:ValidationSummary ID="ValidationSummary1" runat="server" 
+						Headertext="Fel inträffade! Åtgärda felen och försök igen."/>
+				</p>
 			</div>
 		</div>
     </form>
