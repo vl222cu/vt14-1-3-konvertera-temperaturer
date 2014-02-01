@@ -24,7 +24,7 @@ namespace _1dv406_1_3_konvertera_temperaturer
 				var endTemp = int.Parse(EndTempBox.Text);
 				var tempInterval = int.Parse(TempIntervalBox.Text);
 
-				// Skiftar °C & °F i rubriken om konvertering från Fahrenheit väljs
+				// Skiftar °C & °F i tabellrubriken om konvertering från Fahrenheit väljs
 				if (ConvFahrtoCelButton.Checked) 
 				{
 					HeaderCell1.Text = "&degF";
