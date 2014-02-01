@@ -6,3 +6,8 @@
 #ConvTempTable {
 	float: right;
 }
+
+h2, #error, a {
+    font-family: "Verdana", "Arial", sans-serif;
+}
+
