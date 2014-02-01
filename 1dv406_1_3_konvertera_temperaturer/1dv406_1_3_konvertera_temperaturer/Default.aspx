@@ -52,16 +52,17 @@
 						Type="Integer" ErrorMessage="Temperatursteget måste ligga mellan 1 och 100"
 						MaximumValue="100" MinimumValue="1"  Display="None"></asp:RangeValidator>
 				</p>
-				<p>
+				<div id="convertwrapper">
 					<%-- Konverteringsval --%>
 					<asp:Label ID="ConvertTitleLabel" runat="server" Text="Typ av konvertering"></asp:Label>
-				</p>
-				<p>
-					<asp:RadioButton ID="CToFButton" runat="server" GroupName="Radiogroup" Text="Celsius till Fahrenheit" Checked="True" />
-				</p>
-				<p>
-					<asp:RadioButton ID="FToCButton" runat="server" GroupName="Radiogroup" Text="Fahrenheit till Celsius"/>
-				</p>
+
+					<p>
+						<asp:RadioButton ID="CToFButton" runat="server" GroupName="Radiogroup" Text="Celsius till Fahrenheit" Checked="True" />
+					</p>
+					<p>
+						<asp:RadioButton ID="FToCButton" runat="server" GroupName="Radiogroup" Text="Fahrenheit till Celsius" />
+					</p>
+				</div>
 					<p>
 						<asp:Button ID="SendButton" runat="server" Text="Konvertera" OnClick="SendButton_Click"/><br />
 					</p>	
@@ -70,9 +71,10 @@
 						<asp:ValidationSummary ID="ValidationSummary1" runat="server"
 							HeaderText="Fel inträffade! Åtgärda felen och försök igen." />
 					</p>
+				<%-- Temperaturtabellen--%>
 				<div id="tablecontainer">
 					<asp:Table ID="ConvTempTable" runat="server" Visible="false">
-						<asp:TableHeaderRow ID="tableHeader">
+						<asp:TableHeaderRow ID="tableheader">
 							<asp:TableHeaderCell ID="HeaderCell1" Text="&degC"></asp:TableHeaderCell>
 							<asp:TableHeaderCell ID="HeaderCell2" Text="&degF"></asp:TableHeaderCell>
 						</asp:TableHeaderRow>

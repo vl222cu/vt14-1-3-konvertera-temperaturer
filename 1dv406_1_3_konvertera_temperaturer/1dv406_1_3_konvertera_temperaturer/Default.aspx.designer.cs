@@ -193,13 +193,13 @@ namespace _1dv406_1_3_konvertera_temperaturer {
         protected global::System.Web.UI.WebControls.Table ConvTempTable;
         
         /// <summary>
-        /// tableHeader control.
+        /// tableheader control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TableHeaderRow tableHeader;
+        protected global::System.Web.UI.WebControls.TableHeaderRow tableheader;
         
         /// <summary>
         /// HeaderCell1 control.
