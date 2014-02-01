@@ -103,22 +103,22 @@ namespace _1dv406_1_3_konvertera_temperaturer {
         protected global::System.Web.UI.WebControls.CompareValidator CompareValidator2;
         
         /// <summary>
-        /// LevelTempLabel control.
+        /// TempIntervalLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LevelTempLabel;
+        protected global::System.Web.UI.WebControls.Label TempIntervalLabel;
         
         /// <summary>
-        /// LevelTempBox control.
+        /// TempIntervalBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox LevelTempBox;
+        protected global::System.Web.UI.WebControls.TextBox TempIntervalBox;
         
         /// <summary>
         /// RequiredFieldValidator3 control.
@@ -182,5 +182,41 @@ namespace _1dv406_1_3_konvertera_temperaturer {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
+        
+        /// <summary>
+        /// ConvTempTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table ConvTempTable;
+        
+        /// <summary>
+        /// tableHeader control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderRow tableHeader;
+        
+        /// <summary>
+        /// HeaderCell1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell HeaderCell1;
+        
+        /// <summary>
+        /// HeaderCell2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TableHeaderCell HeaderCell2;
     }
 }

@@ -42,13 +42,13 @@
 				</p>
 				<p>
 					<%-- Stegtemperaturinput--%>
-					<asp:Label ID="LevelTempLabel" runat="server" Text="Temperatursteg:"></asp:Label><br />
-					<asp:TextBox ID="LevelTempBox" runat="server"></asp:TextBox><br />
+					<asp:Label ID="TempIntervalLabel" runat="server" Text="Temperatursteg:"></asp:Label><br />
+					<asp:TextBox ID="TempIntervalBox" runat="server"></asp:TextBox><br />
 					<%-- Validering--%>
 					<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server"
-						ErrorMessage="Temperaturstegsfältet får inte vara tomt" ControlToValidate="LevelTempBox"
+						ErrorMessage="Temperaturstegsfältet får inte vara tomt" ControlToValidate="TempIntervalBox"
 						Display="None"></asp:RequiredFieldValidator>
-					<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="LevelTempBox"
+					<asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TempIntervalBox"
 						Type="Integer" ErrorMessage="Temperatursteget måste ligga mellan 1 och 100"
 						MaximumValue="100" MinimumValue="1"  Display="None"></asp:RangeValidator>
 				</p>
@@ -57,10 +57,10 @@
 					<asp:Label ID="ConvertTitleLabel" runat="server" Text="Typ av konvertering"></asp:Label>
 				</p>
 				<p>
-					<asp:RadioButton ID="ConvCeltoFahrButton" runat="server" GroupName="ConvertAlt" Text="Celsius till Fahrenheit" Checked="True" />
+					<asp:RadioButton ID="ConvCeltoFahrButton" runat="server" GroupName="Radiogroup" Text="Celsius till Fahrenheit" Checked="True" />
 				</p>
 				<p>
-					<asp:RadioButton ID="ConvFahrtoCelButton" runat="server" GroupName="ConvertAlt" Text="Fahrenheit till Celsius"/>
+					<asp:RadioButton ID="ConvFahrtoCelButton" runat="server" GroupName="Radiogroup" Text="Fahrenheit till Celsius"/>
 				</p>
 				<p>
 					<asp:Button ID="SendButton" runat="server" Text="Konvertera" /><br />
@@ -70,8 +70,16 @@
 					<asp:ValidationSummary ID="ValidationSummary1" runat="server" 
 						Headertext="Fel inträffade! Åtgärda felen och försök igen."/>
 				</p>
+				<asp:Table ID="ConvTempTable" runat="server" Visible="false">
+					<asp:TableHeaderRow ID="tableHeader">
+						<asp:TableHeaderCell ID="HeaderCell1" Text="&degC"></asp:TableHeaderCell>
+						<asp:TableHeaderCell ID="HeaderCell2" Text="&degF"></asp:TableHeaderCell>
+					</asp:TableHeaderRow>
+				</asp:Table>
+
 			</div>
 		</div>
     </form>
 </body>
 </html>
+
