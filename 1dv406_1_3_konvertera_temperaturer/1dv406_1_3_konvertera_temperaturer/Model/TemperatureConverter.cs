@@ -19,6 +19,5 @@ namespace _1dv406_1_3_konvertera_temperaturer.Model
 			return Convert.ToInt32((degreesF - 32) * 5 / 9);
 		}
 
-
 	}
 }

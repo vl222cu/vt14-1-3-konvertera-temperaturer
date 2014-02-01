@@ -25,7 +25,7 @@ namespace _1dv406_1_3_konvertera_temperaturer
 				var tempInterval = int.Parse(TempIntervalBox.Text);
 
 				// Skiftar °C & °F i tabellrubriken om konvertering från Fahrenheit väljs
-				if (ConvFahrtoCelButton.Checked) 
+				if (FToCButton.Checked)
 				{
 					HeaderCell1.Text = "&degF";
 					HeaderCell2.Text = "&degC";
@@ -36,18 +36,20 @@ namespace _1dv406_1_3_konvertera_temperaturer
 				for (int i = startTemp; i <= endTemp; i += tempInterval)
 				{
 					TableRow tRow = new TableRow();
-					ConvTempTable.Rows.Add(tRow);
 					TableCell[] arr = new TableCell[] 
 					{
 						new TableCell(),
 						new TableCell()
 					};
+					ConvTempTable.Rows.Add(tRow);
 					tRow.Cells.AddRange(arr);
 
-					arr[0].Text = startTemp.ToString();
+					arr[0].Text = String.Format("{0}", i);
+					arr[1].Text = FToCButton.Checked ?
+						String.Format("{0}", Model.TemperatureConverter.FahrenheitToCelsius(i)) :
+						String.Format("{0}", Model.TemperatureConverter.CelsiusToFahrenheit(i));
 				}
 			}
-            
 		}
 	}
 }

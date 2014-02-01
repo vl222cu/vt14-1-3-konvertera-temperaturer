@@ -53,30 +53,31 @@
 						MaximumValue="100" MinimumValue="1"  Display="None"></asp:RangeValidator>
 				</p>
 				<p>
-					<%-- Konverteringsval--%>
+					<%-- Konverteringsval --%>
 					<asp:Label ID="ConvertTitleLabel" runat="server" Text="Typ av konvertering"></asp:Label>
 				</p>
 				<p>
-					<asp:RadioButton ID="ConvCeltoFahrButton" runat="server" GroupName="Radiogroup" Text="Celsius till Fahrenheit" Checked="True" />
+					<asp:RadioButton ID="CToFButton" runat="server" GroupName="Radiogroup" Text="Celsius till Fahrenheit" Checked="True" />
 				</p>
 				<p>
-					<asp:RadioButton ID="ConvFahrtoCelButton" runat="server" GroupName="Radiogroup" Text="Fahrenheit till Celsius"/>
+					<asp:RadioButton ID="FToCButton" runat="server" GroupName="Radiogroup" Text="Fahrenheit till Celsius"/>
 				</p>
-				<p>
-					<asp:Button ID="SendButton" runat="server" Text="Konvertera" /><br />
-				</p>
-				<p>
-					<%-- Valideringsfelmeddelanden--%>
-					<asp:ValidationSummary ID="ValidationSummary1" runat="server" 
-						Headertext="Fel inträffade! Åtgärda felen och försök igen."/>
-				</p>
-				<asp:Table ID="ConvTempTable" runat="server" Visible="false">
-					<asp:TableHeaderRow ID="tableHeader">
-						<asp:TableHeaderCell ID="HeaderCell1" Text="&degC"></asp:TableHeaderCell>
-						<asp:TableHeaderCell ID="HeaderCell2" Text="&degF"></asp:TableHeaderCell>
-					</asp:TableHeaderRow>
-				</asp:Table>
-
+					<p>
+						<asp:Button ID="SendButton" runat="server" Text="Konvertera" OnClick="SendButton_Click"/><br />
+					</p>	
+					<p>
+						<%-- Valideringsfelmeddelanden--%>
+						<asp:ValidationSummary ID="ValidationSummary1" runat="server"
+							HeaderText="Fel inträffade! Åtgärda felen och försök igen." />
+					</p>
+				<div id="tablecontainer">
+					<asp:Table ID="ConvTempTable" runat="server" Visible="false">
+						<asp:TableHeaderRow ID="tableHeader">
+							<asp:TableHeaderCell ID="HeaderCell1" Text="&degC"></asp:TableHeaderCell>
+							<asp:TableHeaderCell ID="HeaderCell2" Text="&degF"></asp:TableHeaderCell>
+						</asp:TableHeaderRow>
+					</asp:Table>
+				</div>
 			</div>
 		</div>
     </form>

@@ -148,22 +148,22 @@ namespace _1dv406_1_3_konvertera_temperaturer {
         protected global::System.Web.UI.WebControls.Label ConvertTitleLabel;
         
         /// <summary>
-        /// ConvCeltoFahrButton control.
+        /// CToFButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton ConvCeltoFahrButton;
+        protected global::System.Web.UI.WebControls.RadioButton CToFButton;
         
         /// <summary>
-        /// ConvFahrtoCelButton control.
+        /// FToCButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton ConvFahrtoCelButton;
+        protected global::System.Web.UI.WebControls.RadioButton FToCButton;
         
         /// <summary>
         /// SendButton control.
