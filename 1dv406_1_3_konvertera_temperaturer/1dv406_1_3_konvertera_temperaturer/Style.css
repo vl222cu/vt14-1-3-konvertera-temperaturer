@@ -1,8 +1,5 @@
-﻿h1,
-#maincontainer {
-    font-family: "Verdana", "Arial", sans-serif;
-	color: #FFF;
-	text-shadow: 2px 2px 0 #1F1D1D;
+﻿#ValidationSummary1 {
+    color: #DB0000;
 }
 
 #maincontainer {
@@ -11,6 +8,7 @@
     margin: auto;
 	padding: 20px;
 	overflow: hidden;
+	font-family: "Verdana", "Arial", sans-serif;
     -moz-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
     -webkit-box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
     box-shadow: 0 0 5px 10px rgba(25,25,25,0.1);
@@ -25,10 +23,14 @@
 	float: left;
 }
 
+h1,
+#ConvertTitleLabel,
 #StartTempLabel,
 #EndTempLabel,
 #TempIntervalLabel {
 	margin: 5px;
+	color: #FFF;
+	text-shadow: 2px 2px 0 #1F1D1D;
 }
 
 #StartTempBox,
@@ -53,6 +55,8 @@
 #convertwrapper {
 	margin-top: 40px;
 	margin-left: 5px;
+	color: #FFF;
+	text-shadow: 2px 2px 0 #1F1D1D;
 }
 
 #SendButton {
@@ -74,6 +78,8 @@
 	background: -o-linear-gradient(top, #263966 5%, #79bbff 100%);
 	background: linear-gradient(#263966 5%, #79bbff 100%);
 }
+
+
 
 /*<-------------Tabellinställningar----------->*/
 
